@@ -16,7 +16,7 @@ import sys
 import threading
 from pathlib import Path
 
-from textual.app import App
+from textual.app import App, Screen
 from textual.widgets import DataTable, Header, Footer, Button, Input
 from textual.reactive import reactive
 from textual import events
@@ -126,7 +126,7 @@ class Dashboard(App):
         stop_model(idx)
         self.refresh_table()
 
-class AddScreen(events.Screen):
+class AddScreen(Screen):
     def __init__(self, parent: Dashboard):
         super().__init__()
         self.parent = parent
